@@ -3,7 +3,7 @@
 3. Try if this works:
 
 ```ruby
-connection = Fog::Compute::Google.new(:google_project => "delegate")
+connection = Fog::Compute::Google.new(:google_project => "delegate-287809")
 ```
 
 
