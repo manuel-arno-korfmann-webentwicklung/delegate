@@ -54,16 +54,16 @@ ActiveRecord::Schema.define(version: 2020_08_28_135216) do
   end
 
   create_table "implementation_try_steps", force: :cascade do |t|
-    t.integer "change_request_step_try_id", null: false
+    t.integer "implementation_try_id", null: false
     t.text "data"
     t.integer "sort_integer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["change_request_step_try_id"], name: "index_implementation_try_steps_on_change_request_step_try_id"
+    t.index ["implementation_try_id"], name: "index_implementation_try_steps_on_implementation_try_id"
   end
 
   add_foreign_key "change_request_steps", "change_requests"
   add_foreign_key "change_requests", "apps"
   add_foreign_key "implementation_tries", "change_request_steps"
-  add_foreign_key "implementation_try_steps", "change_request_step_tries"
+  add_foreign_key "implementation_try_steps", "implementation_tries"
 end

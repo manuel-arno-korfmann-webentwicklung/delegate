@@ -69,6 +69,6 @@ class ImplementationTryStepsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def implementation_try_step_params
-      params.require(:implementation_try_step).permit(:change_request_step_try_id, :data, :sort_integer)
+      params.require(:implementation_try_step).permit(:implementation_try_id, :data, :sort_integer)
     end
 end

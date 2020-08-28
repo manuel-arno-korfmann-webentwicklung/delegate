@@ -1,3 +1,3 @@
 class ImplementationTryStep < ApplicationRecord
-  belongs_to :change_request_step_try
+  belongs_to :implementation_try
 end

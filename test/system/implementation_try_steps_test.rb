@@ -14,7 +14,7 @@ class ImplementationTryStepsTest < ApplicationSystemTestCase
     visit implementation_try_steps_url
     click_on "New Implementation Try Step"
 
-    fill_in "Change request step try", with: @implementation_try_step.change_request_step_try_id
+    fill_in "Change request step try", with: @implementation_try_step.implementation_try_id
     fill_in "Data", with: @implementation_try_step.data
     fill_in "Sort integer", with: @implementation_try_step.sort_integer
     click_on "Create Implementation try step"
@@ -27,7 +27,7 @@ class ImplementationTryStepsTest < ApplicationSystemTestCase
     visit implementation_try_steps_url
     click_on "Edit", match: :first
 
-    fill_in "Change request step try", with: @implementation_try_step.change_request_step_try_id
+    fill_in "Change request step try", with: @implementation_try_step.implementation_try_id
     fill_in "Data", with: @implementation_try_step.data
     fill_in "Sort integer", with: @implementation_try_step.sort_integer
     click_on "Update Implementation try step"

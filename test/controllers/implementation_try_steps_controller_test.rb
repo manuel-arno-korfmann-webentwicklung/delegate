@@ -17,7 +17,7 @@ class ImplementationTryStepsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create implementation_try_step" do
     assert_difference('ImplementationTryStep.count') do
-      post implementation_try_steps_url, params: { implementation_try_step: { change_request_step_try_id: @implementation_try_step.change_request_step_try_id, data: @implementation_try_step.data, sort_integer: @implementation_try_step.sort_integer } }
+      post implementation_try_steps_url, params: { implementation_try_step: { implementation_try_id: @implementation_try_step.implementation_try_id, data: @implementation_try_step.data, sort_integer: @implementation_try_step.sort_integer } }
     end
 
     assert_redirected_to implementation_try_step_url(ImplementationTryStep.last)
@@ -34,7 +34,7 @@ class ImplementationTryStepsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update implementation_try_step" do
-    patch implementation_try_step_url(@implementation_try_step), params: { implementation_try_step: { change_request_step_try_id: @implementation_try_step.change_request_step_try_id, data: @implementation_try_step.data, sort_integer: @implementation_try_step.sort_integer } }
+    patch implementation_try_step_url(@implementation_try_step), params: { implementation_try_step: { implementation_try_id: @implementation_try_step.implementation_try_id, data: @implementation_try_step.data, sort_integer: @implementation_try_step.sort_integer } }
     assert_redirected_to implementation_try_step_url(@implementation_try_step)
   end
 

@@ -15,7 +15,7 @@
   <tbody>
     <% @implementation_try_steps.each do |implementation_try_step| %>
       <tr>
-        <td><%= implementation_try_step.change_request_step_try_id %></td>
+        <td><%= implementation_try_step.implementation_try_id %></td>
         <td><%= implementation_try_step.data %></td>
         <td><%= implementation_try_step.sort_integer %></td>
         <td><%= link_to 'Show', implementation_try_step %></td>
