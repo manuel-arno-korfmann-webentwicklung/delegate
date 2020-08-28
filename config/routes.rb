@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :gce_servers
+  resources :implementation_try_steps
+  resources :implementation_tries
   resources :change_request_steps
   resources :change_requests
   root to: 'apps#index'

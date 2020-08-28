@@ -1,0 +1,32 @@
+<%= form_with(model: gce_server, local: true) do |form| %>
+  <% if gce_server.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gce_server.errors.count, "error") %> prohibited this gce_server from being saved:</h2>
+
+      <ul>
+        <% gce_server.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :gce_server_associable_id %>
+    <%= form.text_field :gce_server_associable_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :identity %>
+    <%= form.text_area :identity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zone %>
+    <%= form.text_area :zone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

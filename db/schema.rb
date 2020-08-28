@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_121639) do
+ActiveRecord::Schema.define(version: 2020_08_28_135216) do
 
   create_table "apps", force: :cascade do |t|
     t.text "name"
@@ -35,6 +35,35 @@ ActiveRecord::Schema.define(version: 2020_08_28_121639) do
     t.index ["app_id"], name: "index_change_requests_on_app_id"
   end
 
+  create_table "gce_servers", force: :cascade do |t|
+    t.string "gce_server_associable_type", null: false
+    t.integer "gce_server_associable_id", null: false
+    t.text "identity"
+    t.text "zone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gce_server_associable_type", "gce_server_associable_id"], name: "gce_server_associable"
+  end
+
+  create_table "implementation_tries", force: :cascade do |t|
+    t.integer "change_request_step_id", null: false
+    t.string "username_of_implementor"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["change_request_step_id"], name: "index_implementation_tries_on_change_request_step_id"
+  end
+
+  create_table "implementation_try_steps", force: :cascade do |t|
+    t.integer "change_request_step_try_id", null: false
+    t.text "data"
+    t.integer "sort_integer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["change_request_step_try_id"], name: "index_implementation_try_steps_on_change_request_step_try_id"
+  end
+
   add_foreign_key "change_request_steps", "change_requests"
   add_foreign_key "change_requests", "apps"
+  add_foreign_key "implementation_tries", "change_request_steps"
+  add_foreign_key "implementation_try_steps", "change_request_step_tries"
 end

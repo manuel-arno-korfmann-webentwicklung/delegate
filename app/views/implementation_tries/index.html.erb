@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Implementation Tries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Change request step</th>
+      <th>Username of implementor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @implementation_tries.each do |implementation_try| %>
+      <tr>
+        <td><%= implementation_try.change_request_step_id %></td>
+        <td><%= implementation_try.username_of_implementor %></td>
+        <td><%= link_to 'Show', implementation_try %></td>
+        <td><%= link_to 'Edit', edit_implementation_try_path(implementation_try) %></td>
+        <td><%= link_to 'Destroy', implementation_try, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Implementation Try', new_implementation_try_path %>

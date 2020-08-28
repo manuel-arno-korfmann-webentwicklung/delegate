@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Change request step try:</strong>
+  <%= @implementation_try_step.change_request_step_try_id %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @implementation_try_step.data %>
+</p>
+
+<p>
+  <strong>Sort integer:</strong>
+  <%= @implementation_try_step.sort_integer %>
+</p>
+
+<%= link_to 'Edit', edit_implementation_try_step_path(@implementation_try_step) %> |
+<%= link_to 'Back', implementation_try_steps_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gce server associable:</strong>
+  <%= @gce_server.gce_server_associable_id %>
+</p>
+
+<p>
+  <strong>Identity:</strong>
+  <%= @gce_server.identity %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @gce_server.zone %>
+</p>
+
+<%= link_to 'Edit', edit_gce_server_path(@gce_server) %> |
+<%= link_to 'Back', gce_servers_path %>

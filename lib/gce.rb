@@ -1,7 +1,13 @@
 module GCE
   
+  def self.get_instance(id, zone)
+    p "Connecting to Google API"
+    connection = Fog::Compute.new(:provider => "Google", google_project: "delegate-287809")
+  
+    connection.servers.get(id, zone)
+  end
+  
   def self.create_instance
-    
     # https://github.com/fog/fog-google/blob/master/examples/create_instance.rb?fbclid=IwAR14G0VKYGEcN4MAZEfKlOdTszTqVcaZzhj21mK1eWfRMvwYhjh0wllvK78
     
     p "Connecting to Google API"
@@ -64,8 +70,7 @@ module GCE
      rescue NameError
        server.wait_for { ready? }
      end
-
-     p "Deleting server"
-     raise "Could not delete server." unless server.destroy
+     
+     return server
   end
 end

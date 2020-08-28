@@ -1,0 +1,32 @@
+<%= form_with(model: implementation_try_step, local: true) do |form| %>
+  <% if implementation_try_step.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(implementation_try_step.errors.count, "error") %> prohibited this implementation_try_step from being saved:</h2>
+
+      <ul>
+        <% implementation_try_step.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :change_request_step_try_id %>
+    <%= form.text_field :change_request_step_try_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.text_area :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sort_integer %>
+    <%= form.number_field :sort_integer %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

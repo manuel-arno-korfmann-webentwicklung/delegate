@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Change request step:</strong>
+  <%= @implementation_try.change_request_step_id %>
+</p>
+
+<p>
+  <strong>Username of implementor:</strong>
+  <%= @implementation_try.username_of_implementor %>
+</p>
+
+<%= link_to 'Edit', edit_implementation_try_path(@implementation_try) %> |
+<%= link_to 'Back', implementation_tries_path %>

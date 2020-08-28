@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gce Servers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gce server associable</th>
+      <th>Identity</th>
+      <th>Zone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gce_servers.each do |gce_server| %>
+      <tr>
+        <td><%= gce_server.gce_server_associable_id %></td>
+        <td><%= gce_server.identity %></td>
+        <td><%= gce_server.zone %></td>
+        <td><%= link_to 'Show', gce_server %></td>
+        <td><%= link_to 'Edit', edit_gce_server_path(gce_server) %></td>
+        <td><%= link_to 'Destroy', gce_server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gce Server', new_gce_server_path %>

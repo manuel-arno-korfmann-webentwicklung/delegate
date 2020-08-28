@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  change_request_step: one
+  username_of_implementor: MyString
+
+two:
+  change_request_step: two
+  username_of_implementor: MyString
