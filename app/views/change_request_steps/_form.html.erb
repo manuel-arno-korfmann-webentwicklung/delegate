@@ -1,0 +1,32 @@
+<%= form_with(model: change_request_step, local: true) do |form| %>
+  <% if change_request_step.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(change_request_step.errors.count, "error") %> prohibited this change_request_step from being saved:</h2>
+
+      <ul>
+        <% change_request_step.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :change_request_id %>
+    <%= form.text_field :change_request_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file_url %>
+    <%= form.text_area :file_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :todo %>
+    <%= form.text_area :todo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

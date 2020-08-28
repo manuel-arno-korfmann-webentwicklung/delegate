@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Change request:</strong>
+  <%= @change_request_step.change_request_id %>
+</p>
+
+<p>
+  <strong>File url:</strong>
+  <%= @change_request_step.file_url %>
+</p>
+
+<p>
+  <strong>Todo:</strong>
+  <%= @change_request_step.todo %>
+</p>
+
+<%= link_to 'Edit', edit_change_request_step_path(@change_request_step) %> |
+<%= link_to 'Back', change_request_steps_path %>

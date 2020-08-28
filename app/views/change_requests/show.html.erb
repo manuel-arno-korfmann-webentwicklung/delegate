@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App:</strong>
+  <%= @change_request.app_id %>
+</p>
+
+<p>
+  <strong>Todo:</strong>
+  <%= @change_request.todo %>
+</p>
+
+<%= link_to 'Edit', edit_change_request_path(@change_request) %> |
+<%= link_to 'Back', change_requests_path %>

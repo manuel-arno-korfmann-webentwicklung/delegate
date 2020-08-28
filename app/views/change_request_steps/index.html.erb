@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Change Request Steps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Change request</th>
+      <th>File url</th>
+      <th>Todo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @change_request_steps.each do |change_request_step| %>
+      <tr>
+        <td><%= change_request_step.change_request_id %></td>
+        <td><%= change_request_step.file_url %></td>
+        <td><%= change_request_step.todo %></td>
+        <td><%= link_to 'Show', change_request_step %></td>
+        <td><%= link_to 'Edit', edit_change_request_step_path(change_request_step) %></td>
+        <td><%= link_to 'Destroy', change_request_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Change Request Step', new_change_request_step_path %>
